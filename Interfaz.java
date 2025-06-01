@@ -298,9 +298,7 @@ public class Interfaz extends JFrame {
                     mostrarError("Selecciona un archivo CSV");
                     return;
                 }
-                
-               //laberinto.cargarLaberintoManual(archivo);
-               laberinto.cargarDesdeArchivo(archivo);
+                laberinto.cargarDesdeArchivo(archivo);
                 actualizarEstado("Laberinto cargado desde: " + archivo);
             }
             
@@ -413,7 +411,7 @@ public class Interfaz extends JFrame {
     private String formatearResultado(Resultado resultado) {
         return String.format(
             "Algoritmo: %s\n" +
-            "Tiempo: %d ms\n" +
+            "Tiempo: %d ms\n" + 
             "Longitud ruta: %d\n" +
             "Ruta encontrada: %s\n" +
             "------------------------",
@@ -459,7 +457,6 @@ public class Interfaz extends JFrame {
                 mostrarError("Error al crear laberinto: " + ex.getMessage());
                 lblEstado.setText("Error en creación");
             }
-            
         });
 
         textoFrame.add(new JScrollPane(textArea), BorderLayout.CENTER);

@@ -622,44 +622,4 @@ public class Laberinto {
             totalConexiones, densidad * 100, esValido() ? "Sí" : "No"
         );
     }
-    
-    /**
- * Carga un laberinto desde un archivo CSV con formato manual.
- * @param rutaArchivo Ruta del archivo CSV.
- * @throws IOException Si hay errores de lectura o formato.
-    
-   public void cargarLaberintoManual(String rutaArchivo) throws IOException {
-       try (BufferedReader reader = new BufferedReader(new FileReader(rutaArchivo))) {
-           grafo = new HashMap<>();
-
-           // Leer dimensiones (primera línea)
-           String linea = reader.readLine();
-           String[] dimensiones = linea.split(",");
-           this.filas = Integer.parseInt(dimensiones[0]);
-           this.columnas = Integer.parseInt(dimensiones[1]);
-               this.inicio = 0;
-               this.fin = columnas*filas-1;
-           // Inicializar nodos
-           for (int i = 0; i < filas * columnas; i++) {
-               grafo.put(i, new ArrayList<>());
-           }
-
-           // Leer conexiones
-           while ((linea = reader.readLine()) != null) {
-               linea = linea.trim();
-
-
-               String[] partes = linea.split(":");
-               int nodo = Integer.parseInt(partes[0]);
-               String[] vecinos = partes[1].split(",");
-
-               for (String vecinoStr : vecinos) {
-                   int vecino = Integer.parseInt(vecinoStr.trim());
-                   agregarConexion(nodo, vecino); 
-               }
-           }
-       } catch (NumberFormatException e) {
-           throw new IOException("Error" + e.getMessage());
-       }
-   }*/
 }

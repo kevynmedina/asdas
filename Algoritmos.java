@@ -7,7 +7,8 @@ import java.util.*;
 public class Algoritmos {
 
     public Resultado buscarBFS(Laberinto laberinto) {
-        long inicioTiempo = System.currentTimeMillis();
+        //long inicioTiempo = System.currentTimeMillis();
+        long inicioTiempo = System.nanoTime();
         int inicio = laberinto.getInicio();
         int fin = laberinto.getFin();
         Map<Integer, Integer> padres = new HashMap<>();
@@ -32,12 +33,13 @@ public class Algoritmos {
             }
         }
         List<Integer> ruta = encontrado ? reconstruirRuta(padres, inicio, fin) : new ArrayList<>();
-        long finTiempo = System.currentTimeMillis();
+        //long finTiempo = System.currentTimeMillis();
+        long finTiempo = System.nanoTime();
         return new Resultado(ruta, "BFS", finTiempo - inicioTiempo, ruta.size());
     }
     
     public Resultado buscarDijkstra(Laberinto laberinto) {
-        long inicioTiempo = System.currentTimeMillis();
+        long inicioTiempo = System.nanoTime();
         int inicio = laberinto.getInicio();
         int fin = laberinto.getFin();
         Map<Integer, Integer> padres = new HashMap<>();
@@ -64,12 +66,12 @@ public class Algoritmos {
             }
         }
         List<Integer> ruta = encontrado ? reconstruirRuta(padres, inicio, fin) : new ArrayList<>();
-        long finTiempo = System.currentTimeMillis();
+        long finTiempo = System.nanoTime();
         return new Resultado(ruta, "Dijkstra", finTiempo - inicioTiempo, ruta.size());
     }
 
     public Resultado buscarAStar(Laberinto laberinto) {
-        long inicioTiempo = System.currentTimeMillis();
+        long inicioTiempo = System.nanoTime();
         int inicio = laberinto.getInicio();
         int fin = laberinto.getFin();
         int filas = laberinto.getFilas();
@@ -99,7 +101,7 @@ public class Algoritmos {
             }
         }
         List<Integer> ruta = encontrado ? reconstruirRuta(padres, inicio, fin) : new ArrayList<>();
-        long finTiempo = System.currentTimeMillis();
+        long finTiempo = System.nanoTime();
         return new Resultado(ruta, "A*", finTiempo - inicioTiempo, ruta.size());
     }
     
