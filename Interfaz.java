@@ -188,7 +188,6 @@ public class Interfaz extends JFrame {
         
         scrollResultados = new JScrollPane(areaResultados);
         scrollResultados.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        
         panelResultados.add(scrollResultados, BorderLayout.CENTER);
     }
     
@@ -384,7 +383,10 @@ public class Interfaz extends JFrame {
                         break;
                     }
                 }
+                areaResultados.append("Mejor ruta encontrada: "+ mejorResultado.getAlgoritmo() +"\n");
             }
+
+                   
             
             actualizarEstado("Laberinto resuelto con " + resultados.size() + " algoritmo(s)");
             
